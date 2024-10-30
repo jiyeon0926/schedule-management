@@ -32,3 +32,23 @@ SELECT 	scheduleId,
 	dtcreate, 
 	dtmodify
 FROM schedule;
+
+-- 선택 일정 조회
+SELECT 	scheduleId, 
+	email, 
+	content, 
+	name, 
+	password, 
+	dtcreate, 
+	dtmodify
+FROM schedule
+WHERE scheduleId = 1
+
+-- 선택 일정 수정
+UPDATE schedule 
+SET content='4 주차 강의 듣고 설계 진행하기'
+WHERE scheduleId = 1;
+
+-- 선택 일정 삭제
+DELETE FROM schedule
+WHERE scheduleId = 1;
