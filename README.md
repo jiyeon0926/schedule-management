@@ -28,6 +28,7 @@
 - https://cocococo.tistory.com/entry/Java-%EB%82%A0%EC%A7%9C-%EB%B0%8F-%EC%8B%9C%EA%B0%84-API-Date-and-Time-API-%EC%82%AC%EC%9A%A9-%EB%B0%A9%EB%B2%95 (날짜)
 - https://velog.io/@hajinheee/Postman-Request-body%EC%97%90-timestamp-%EC%B0%8D%EC%96%B4-%EB%B3%B4%EB%82%B4%EB%8A%94-%EB%B0%A9%EB%B2%95 (postman 날짜 요청)
 - https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide (API 명세서)
+- https://velog.io/@cil05265/E-R-%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8ERD-%EC%9E%91%EC%84%B1-%ED%91%9C%EA%B8%B0%EB%B2%95-%EB%B0%8F-%EC%98%88%EC%8B%9C (ERD)
 -------------
 
 # 📄 API 명세서
