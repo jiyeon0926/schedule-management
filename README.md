@@ -159,3 +159,6 @@ Location: /schedules/1
 DELETE /schedules/1 HTTP/1.1
 Host: localhost:8080
 ```
+-----
+
+# ☁ ERD
