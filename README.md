@@ -25,6 +25,8 @@
 - https://github.com/9898s/account-api/blob/master/README.md (API 명세서)
 - https://skopenapi.readme.io/reference/api-%EA%B0%9C%EC%9A%94-1 (API 명세서)
 - https://developers.naver.com/docs/login/calendar-api/calendar-api.md (API 명세서)
+- https://cocococo.tistory.com/entry/Java-%EB%82%A0%EC%A7%9C-%EB%B0%8F-%EC%8B%9C%EA%B0%84-API-Date-and-Time-API-%EC%82%AC%EC%9A%A9-%EB%B0%A9%EB%B2%95 (날짜)
+- https://velog.io/@hajinheee/Postman-Request-body%EC%97%90-timestamp-%EC%B0%8D%EC%96%B4-%EB%B3%B4%EB%82%B4%EB%8A%94-%EB%B0%A9%EB%B2%95 (postman 날짜 요청)
 -------------
 
 # 📄 API 명세서
@@ -43,10 +45,10 @@ POST /schedules HTTP/1.1
 Content-Type: application/json
 
 {
- "dtstart": "202410301911",
- "dtend": "202410310940",
- "title": "학습"
- "content": "4 주차 강의까지 듣기"
+ "dtstart": "2024-10-30",
+ "dtend": "2024-10-31",
+ "title": "학습",
+ "content": "4 주차 강의까지 듣기",
  "location": "집"
 }
 ```
@@ -57,15 +59,94 @@ Content-Type: application/json
 Location: /schedules/1
 
 {
- "dtstart": "202410301911",
- "dtend": "202410310940",
- "title": "학습"
- "content": "4 주차 강의까지 듣기"
+ "dtstart": "2024-10-30",
+ "dtend": "2024-10-31",
+ "title": "학습",
+ "content": "4 주차 강의까지 듣기",
  "location": "집"
 }
 ```
 
 ### 일정 단건 조회
+#### Request
+```
+GET /schedules/1 HTTP/1.1
+Host: localhost:8080
+```
+#### Response
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+ "dtstart": "2024-10-30",
+ "dtend": "2024-10-31",
+ "title": "학습",
+ "content": "4 주차 강의까지 듣기",
+ "location": "집"
+}
+```
+
 ### 일정 전체 조회
+#### Request
+```
+GET /schedules HTTP/1.1
+Host: localhost:8080
+```
+#### Response
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+[
+ {
+  "postid": 1
+  "dtstart": "2024-10-30",
+  "dtend": "2024-10-30",
+  "title": "학습",
+  "content": "4 주차 강의까지 듣기",
+  "location": "집"
+ },
+ {
+  "postid": 2
+  "dtstart": "2024-10-29",
+  "dtend": "2024-11-01",
+  "title": "과제",
+  "content": "API 명세서 작성",
+  "location": "집"
+ }
+]
+```
+
 ### 일정 수정
+#### Request
+```
+PATCH /schedules/1 HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "스파르타 강의"
+}
+```
+
+#### Response
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+Location: /schedules/1
+
+{
+ "dtstart": "2024-10-30",
+ "dtend": "2024-10-31",
+ "title": "스파르타 강의",
+ "content": "4 주차 강의까지 듣기",
+ "location": "집"
+}
+```
+
 ### 일정 삭제
+#### Request
+```
+DELETE /schedules/1 HTTP/1.1
+Host: localhost:8080
+```
