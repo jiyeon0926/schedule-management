@@ -140,7 +140,7 @@ PATCH /schedules/2 HTTP/1.1
 Content-Type: application/json
 
 {
-  "content": "api 명세서 및 ERD 작성하기",
+  "content": "api 명세서 및 ERD 작성하기"
 }
 ```
 
