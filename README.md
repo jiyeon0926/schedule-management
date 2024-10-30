@@ -41,11 +41,12 @@
 
 |이름|타입|설명|
 |:---|:---|:---|
-|dtstart|datetime|시작 날짜 [YYYY]-[MM]-[DD]|
-|dtend|datetime|종료 날짜 [YYYY]-[MM]-[DD]|
-|title|string|제목|
-|content|string|내용|
-|location|string|장소|
+|content|string|할일|
+|username|string|작성자명|
+|password|string|비밀번호|
+|email|string|이메일|
+|dtcreate|datetime|작성일 YYYY-MM-DD|
+|dtmodify|datetime|수정일 YYYY-MM-DD|
 
 ### 1. 일정 등록
 #### 1-1. Request
@@ -54,11 +55,12 @@ POST /schedules HTTP/1.1
 Content-Type: application/json
 
 {
- "dtstart": "2024-10-30",
- "dtend": "2024-10-31",
- "title": "학습",
  "content": "4 주차 강의까지 듣기",
- "location": "집"
+ "username": "자바",
+ "password": "spring1234",
+ "email": "spring00@gmail.com",
+ "dtcreate": "2024-10-30",
+ "dtmodify": "2024-10-30"
 }
 ```
 #### 1-2. Response
@@ -68,11 +70,12 @@ Content-Type: application/json
 Location: /schedules/1
 
 {
- "dtstart": "2024-10-30",
- "dtend": "2024-10-31",
- "title": "학습",
  "content": "4 주차 강의까지 듣기",
- "location": "집"
+ "username": "자바",
+ "password": "spring1234",
+ "email": "spring00@gmail.com",
+ "dtcreate": "2024-10-30",
+ "dtmodify": "2024-10-30"
 }
 ```
 
@@ -88,11 +91,12 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
- "dtstart": "2024-10-30",
- "dtend": "2024-10-31",
- "title": "학습",
  "content": "4 주차 강의까지 듣기",
- "location": "집"
+ "username": "자바",
+ "password": "spring1234",
+ "email": "spring00@gmail.com",
+ "dtcreate": "2024-10-30",
+ "dtmodify": "2024-10-30"
 }
 ```
 
@@ -109,20 +113,22 @@ Content-Type: application/json
 
 [
  {
-  "postid": 1
-  "dtstart": "2024-10-30",
-  "dtend": "2024-10-30",
-  "title": "학습",
+  "scheduleid": 1
   "content": "4 주차 강의까지 듣기",
-  "location": "집"
+  "username": "김자바",
+  "password": "spring1234",
+  "email": "spring00@gmail.com",
+  "dtcreate": "2024-10-30",
+  "dtmodify": "2024-10-30"
  },
  {
-  "postid": 2
-  "dtstart": "2024-10-29",
-  "dtend": "2024-11-01",
-  "title": "과제",
-  "content": "API 명세서 작성",
-  "location": "집"
+  "scheduleid": 2
+  "content": "api 명세서 작성하기",
+  "username": "김명세",
+  "password": "api1234",
+  "email": "api00@gmail.com",
+  "dtcreate": "2024-10-30",
+  "dtmodify": "2024-10-30"
  }
 ]
 ```
@@ -130,11 +136,11 @@ Content-Type: application/json
 ### 4. 일정 수정
 #### 4-1. Request
 ```
-PATCH /schedules/1 HTTP/1.1
+PATCH /schedules/2 HTTP/1.1
 Content-Type: application/json
 
 {
-  "title": "스파르타 강의"
+  "content": "api 명세서 및 ERD 작성하기",
 }
 ```
 
@@ -142,14 +148,16 @@ Content-Type: application/json
 ```
 HTTP/1.1 200 OK
 Content-Type: application/json
-Location: /schedules/1
+Location: /schedules/2
 
 {
- "dtstart": "2024-10-30",
- "dtend": "2024-10-31",
- "title": "스파르타 강의",
- "content": "4 주차 강의까지 듣기",
- "location": "집"
+  "scheduleid": 2
+  "content": "api 명세서 및 ERD 작성하기",
+  "username": "김명세",
+  "password": "api1234",
+  "email": "api00@gmail.com",
+  "dtcreate": "2024-10-30",
+  "dtmodify": "2024-10-30"
 }
 ```
 
@@ -162,3 +170,6 @@ Host: localhost:8080
 -----
 
 # ☁ ERD
+- Entity : 일정, 작성자
+- 일정 Attribute : 할일, 작성자명, 비밀번호, 이메일, 작성일, 수정일
+- 작성자 Attribute : 작성자명, 비밀번호, 이메일
