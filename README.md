@@ -41,8 +41,8 @@
 
 |이름|타입|설명|
 |:---|:---|:---|
-|dtstart|datetime|시작 날짜|
-|dtend|datetime|종료 날짜|
+|dtstart|datetime|시작 날짜 [YYYY]-[MM]-[DD]|
+|dtend|datetime|종료 날짜 [YYYY]-[MM]-[DD]|
 |title|string|제목|
 |content|string|내용|
 |location|string|장소|
