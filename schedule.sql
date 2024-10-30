@@ -25,10 +25,10 @@ INSERT INTO schedule (scheduleId, email, content, name, password, dtcreate, dtmo
 
 -- 전체 일정 조회
 SELECT 	scheduleId, 
-		email, 
-		content, 
-		name, 
-		password, 
-		dtcreate, 
-		dtmodify
+	email, 
+	content, 
+	name, 
+	password, 
+	dtcreate, 
+	dtmodify
 FROM schedule;
