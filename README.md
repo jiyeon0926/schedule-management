@@ -27,3 +27,10 @@
 -------------
 
 # 📄 API 명세서
+|기능|Method|URL|HTTP 상태 코드|
+|:---:|:---:|:---:|:---:|
+|일정 등록|POST|/posts|201 Created|
+|일정 단건 조회|GET|/posts/{postId}|200 OK|
+|일정 전체 조회|GET|/posts|200 OK|
+|일정 수정|PATCH|/posts/{postId}|200 OK|
+|일정 삭제|DELETE|/posts/{postId}|200 OK|
