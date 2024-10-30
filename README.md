@@ -27,6 +27,7 @@
 - https://developers.naver.com/docs/login/calendar-api/calendar-api.md (API 명세서)
 - https://cocococo.tistory.com/entry/Java-%EB%82%A0%EC%A7%9C-%EB%B0%8F-%EC%8B%9C%EA%B0%84-API-Date-and-Time-API-%EC%82%AC%EC%9A%A9-%EB%B0%A9%EB%B2%95 (날짜)
 - https://velog.io/@hajinheee/Postman-Request-body%EC%97%90-timestamp-%EC%B0%8D%EC%96%B4-%EB%B3%B4%EB%82%B4%EB%8A%94-%EB%B0%A9%EB%B2%95 (postman 날짜 요청)
+- https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide (API 명세서)
 -------------
 
 # 📄 API 명세서
@@ -37,6 +38,14 @@
 |일정 전체 조회|GET|/schedules|200 OK|
 |일정 수정|PATCH|/schedules/{scheduleId}|200 OK|
 |일정 삭제|DELETE|/schedules/{scheduleId}|200 OK|
+
+|이름|타입|설명|
+|:---|:---|:---|
+|dtstart|datetime|시작 날짜|
+|dtend|datetime|종료 날짜|
+|title|string|제목|
+|content|string|내용|
+|location|string|장소|
 
 ### 1. 일정 등록
 #### 1-1. Request
