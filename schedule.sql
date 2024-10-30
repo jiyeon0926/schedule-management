@@ -1,27 +1,34 @@
--- CREATE
-CREATE TABLE `writer` (
-   `email`   varchar(50)   NOT NULL,
-   `name`   varchar(20)   NOT NULL,
-   `password`   varchar(100)   NOT NULL
-);
-
+-- 테이블 생성
 CREATE TABLE `schedule` (
-   `scheduleId`   bigint   NOT NULL,
-   `email`   varchar(50)   NOT NULL,
-   `content`   varchar(100)   NULL   DEFAULT ' ',
-   `name`   varchar(20)   NOT NULL,
-   `password`   varchar(100)   NOT NULL,
-   `dtcreate`   date   NOT NULL,
-   `dtmodify`   date   NOT NULL
+  `scheduleId` bigint NOT NULL AUTO_INCREMENT,
+  `email` varchar(50) NOT NULL,
+  `content` varchar(100) DEFAULT ' ',
+  `name` varchar(20) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `dtcreate` date NOT NULL,
+  `dtmodify` date NOT NULL,
+  PRIMARY KEY (`scheduleId`)
 );
 
-ALTER TABLE `writer` ADD CONSTRAINT `PK_WRITER` PRIMARY KEY (
-   `email`
+CREATE TABLE `writer` (
+  `email` varchar(50) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  PRIMARY KEY (`email`)
 );
 
-ALTER TABLE `schedule` ADD CONSTRAINT `PK_SCHEDULE` PRIMARY KEY (
-   `scheduleId`
-);
+ALTER TABLE schedule ADD CONSTRAINT schedule_writer_FK FOREIGN KEY (email) REFERENCES writer(email);
 
--- SELECT
-SEL
+-- 일정 등록 (외래키로 인해 작성자 테이블에 등록된 사람만 일정 등록 가능)
+INSERT INTO writer (email, name, password) VALUES('python12@naver.com', 'PythonLee', 'py1234');
+INSERT INTO schedule (scheduleId, email, content, name, password, dtcreate, dtmodify) VALUES(0, 'python12@naver.com', 'ERD 마무리하기', 'PythonLee', 'py1234', '2024-10-31', '2024-10-31');
+
+-- 전체 일정 조회
+SELECT 	scheduleId, 
+		email, 
+		content, 
+		name, 
+		password, 
+		dtcreate, 
+		dtmodify
+FROM schedule;
