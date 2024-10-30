@@ -30,6 +30,7 @@
 - https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide (API 명세서)
 - https://velog.io/@cil05265/E-R-%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8ERD-%EC%9E%91%EC%84%B1-%ED%91%9C%EA%B8%B0%EB%B2%95-%EB%B0%8F-%EC%98%88%EC%8B%9C (ERD)
 - https://hipopatamus.tistory.com/116 (ERDCloud 사용 방법)
+- https://velog.io/@k904808/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%98-%EC%84%A4%EA%B3%84 (ERD 논리/물리 이름 설정)
 -------------
 
 # 📄 API 명세서
