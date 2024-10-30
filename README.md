@@ -45,7 +45,7 @@
 |이름|타입|설명|
 |:---|:---|:---|
 |content|string|할일|
-|username|string|작성자명|
+|name|string|작성자명|
 |password|string|비밀번호|
 |email|string|이메일|
 |dtcreate|datetime|작성일 YYYY-MM-DD|
@@ -59,7 +59,7 @@ Content-Type: application/json
 
 {
  "content": "4 주차 강의까지 듣기",
- "username": "김자바",
+ "name": "김자바",
  "password": "spring1234",
  "email": "spring00@gmail.com",
  "dtcreate": "2024-10-30",
@@ -74,7 +74,7 @@ Location: /schedules/1
 
 {
  "content": "4 주차 강의까지 듣기",
- "username": "김자바",
+ "name": "김자바",
  "password": "spring1234",
  "email": "spring00@gmail.com",
  "dtcreate": "2024-10-30",
@@ -95,7 +95,7 @@ Content-Type: application/json
 
 {
  "content": "4 주차 강의까지 듣기",
- "username": "김자바",
+ "name": "김자바",
  "password": "spring1234",
  "email": "spring00@gmail.com",
  "dtcreate": "2024-10-30",
@@ -118,7 +118,7 @@ Content-Type: application/json
  {
   "scheduleid": 1
   "content": "4 주차 강의까지 듣기",
-  "username": "김자바",
+  "name": "김자바",
   "password": "spring1234",
   "email": "spring00@gmail.com",
   "dtcreate": "2024-10-30",
@@ -127,7 +127,7 @@ Content-Type: application/json
  {
   "scheduleid": 2
   "content": "api 명세서 작성하기",
-  "username": "김명세",
+  "name": "김명세",
   "password": "api1234",
   "email": "api00@gmail.com",
   "dtcreate": "2024-10-30",
@@ -155,7 +155,7 @@ Location: /schedules/2
 
 {
   "content": "api 명세서 및 ERD 작성하기",
-  "username": "김명세",
+  "name": "김명세",
   "password": "api1234",
   "email": "api00@gmail.com",
   "dtcreate": "2024-10-30",
