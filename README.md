@@ -178,5 +178,7 @@ Host: localhost:8080
 - 작성자 Attribute : 작성자명, 비밀번호, 이메일
 - 일정 Attribute : 할일, 작성자명, 비밀번호, 이메일, 작성일, 수정일
 - 작성자와 일정은 1:N 관계
+- email : 작성자 테이블의 기본키, 일정 테이블의 외래키
+- scheduleId : 일정 테이블의 기본키
 
 <img src="https://github.com/user-attachments/assets/3b4f6c2b-70ed-43d7-94ce-127e82a556d0" width="700" height="555">
