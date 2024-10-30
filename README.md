@@ -174,9 +174,9 @@ Host: localhost:8080
 
 # ☁ ERD
 - ERD Tool : [ERDCloud](https://www.erdcloud.com/)
-- Entity : 일정, 작성자
-- 일정 Attribute : 할일, 작성자명, 비밀번호, 이메일, 작성일, 수정일
+- Entity : 작성자, 일정
 - 작성자 Attribute : 작성자명, 비밀번호, 이메일
+- 일정 Attribute : 할일, 작성자명, 비밀번호, 이메일, 작성일, 수정일
 - 작성자와 일정은 1:N 관계
 
 <img src="https://github.com/user-attachments/assets/3a1f1ca9-b2cd-440e-b6fc-c47459b3b185" width="700" height="555">
