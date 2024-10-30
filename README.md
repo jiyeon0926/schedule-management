@@ -179,4 +179,4 @@ Host: localhost:8080
 - 작성자 Attribute : 작성자명, 비밀번호, 이메일
 - 작성자와 일정은 1:N 관계
 
-
+<img src="https://github.com/user-attachments/assets/3a1f1ca9-b2cd-440e-b6fc-c47459b3b185" width="700" height="555">
