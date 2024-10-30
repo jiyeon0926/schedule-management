@@ -24,13 +24,48 @@
 # 📝 참고
 - https://github.com/9898s/account-api/blob/master/README.md (API 명세서)
 - https://skopenapi.readme.io/reference/api-%EA%B0%9C%EC%9A%94-1 (API 명세서)
+- https://developers.naver.com/docs/login/calendar-api/calendar-api.md (API 명세서)
 -------------
 
 # 📄 API 명세서
 |기능|Method|URL|HTTP 상태 코드|
-|:---:|:---:|:---:|:---:|
-|일정 등록|POST|/posts|201 Created|
-|일정 단건 조회|GET|/posts/{postId}|200 OK|
-|일정 전체 조회|GET|/posts|200 OK|
-|일정 수정|PATCH|/posts/{postId}|200 OK|
-|일정 삭제|DELETE|/posts/{postId}|200 OK|
+|:---|:---:|:---|:---|
+|일정 등록|POST|/schedules|201 Created|
+|일정 단건 조회|GET|/schedules/{scheduleId}|200 OK|
+|일정 전체 조회|GET|/schedules|200 OK|
+|일정 수정|PATCH|/schedules/{scheduleId}|200 OK|
+|일정 삭제|DELETE|/schedules/{scheduleId}|200 OK|
+
+### 일정 등록
+#### Request
+```
+POST /schedules HTTP/1.1
+Content-Type: application/json
+
+{
+ "dtstart": "202410301911",
+ "dtend": "202410310940",
+ "title": "학습"
+ "content": "4 주차 강의까지 듣기"
+ "location": "집"
+}
+```
+#### Response
+```
+HTTP/1.1 201 Created
+Content-Type: application/json
+Location: /schedules/1
+
+{
+ "dtstart": "202410301911",
+ "dtend": "202410310940",
+ "title": "학습"
+ "content": "4 주차 강의까지 듣기"
+ "location": "집"
+}
+```
+
+### 일정 단건 조회
+### 일정 전체 조회
+### 일정 수정
+### 일정 삭제
