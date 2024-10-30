@@ -38,8 +38,8 @@
 |일정 수정|PATCH|/schedules/{scheduleId}|200 OK|
 |일정 삭제|DELETE|/schedules/{scheduleId}|200 OK|
 
-### 일정 등록
-#### Request
+### 1. 일정 등록
+#### 1-1. Request
 ```
 POST /schedules HTTP/1.1
 Content-Type: application/json
@@ -52,7 +52,7 @@ Content-Type: application/json
  "location": "집"
 }
 ```
-#### Response
+#### 1-2. Response
 ```
 HTTP/1.1 201 Created
 Content-Type: application/json
@@ -67,13 +67,13 @@ Location: /schedules/1
 }
 ```
 
-### 일정 단건 조회
-#### Request
+### 2. 일정 단건 조회
+#### 2-1. Request
 ```
 GET /schedules/1 HTTP/1.1
 Host: localhost:8080
 ```
-#### Response
+#### 2-2. Response
 ```
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -87,13 +87,13 @@ Content-Type: application/json
 }
 ```
 
-### 일정 전체 조회
-#### Request
+### 3. 일정 전체 조회
+#### 3-1. Request
 ```
 GET /schedules HTTP/1.1
 Host: localhost:8080
 ```
-#### Response
+#### 3-2. Response
 ```
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -118,8 +118,8 @@ Content-Type: application/json
 ]
 ```
 
-### 일정 수정
-#### Request
+### 4. 일정 수정
+#### 4-1. Request
 ```
 PATCH /schedules/1 HTTP/1.1
 Content-Type: application/json
@@ -129,7 +129,7 @@ Content-Type: application/json
 }
 ```
 
-#### Response
+#### 4-2. Response
 ```
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -144,8 +144,8 @@ Location: /schedules/1
 }
 ```
 
-### 일정 삭제
-#### Request
+### 5. 일정 삭제
+#### 5-1. Request
 ```
 DELETE /schedules/1 HTTP/1.1
 Host: localhost:8080
