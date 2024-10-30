@@ -151,7 +151,6 @@ Content-Type: application/json
 Location: /schedules/2
 
 {
-  "scheduleid": 2
   "content": "api 명세서 및 ERD 작성하기",
   "username": "김명세",
   "password": "api1234",
