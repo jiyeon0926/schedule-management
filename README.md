@@ -49,8 +49,8 @@
 |name|string|작성자명|
 |password|string|비밀번호|
 |email|string|이메일|
-|dtcreate|datetime|작성일 YYYY-MM-DD|
-|dtmodify|datetime|수정일 YYYY-MM-DD|
+|dtcreate|date|작성일 YYYY-MM-DD|
+|dtmodify|date|수정일 YYYY-MM-DD|
 
 ### 1. 일정 등록
 #### 1-1. Request
