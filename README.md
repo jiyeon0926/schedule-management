@@ -56,7 +56,7 @@ Content-Type: application/json
 
 {
  "content": "4 주차 강의까지 듣기",
- "username": "자바",
+ "username": "김자바",
  "password": "spring1234",
  "email": "spring00@gmail.com",
  "dtcreate": "2024-10-30",
@@ -71,7 +71,7 @@ Location: /schedules/1
 
 {
  "content": "4 주차 강의까지 듣기",
- "username": "자바",
+ "username": "김자바",
  "password": "spring1234",
  "email": "spring00@gmail.com",
  "dtcreate": "2024-10-30",
@@ -92,7 +92,7 @@ Content-Type: application/json
 
 {
  "content": "4 주차 강의까지 듣기",
- "username": "자바",
+ "username": "김자바",
  "password": "spring1234",
  "email": "spring00@gmail.com",
  "dtcreate": "2024-10-30",
