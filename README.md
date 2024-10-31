@@ -32,6 +32,7 @@
 - https://hipopatamus.tistory.com/116 (ERDCloud 사용 방법)
 - https://velog.io/@k904808/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%98-%EC%84%A4%EA%B3%84 (ERD 논리/물리 이름 설정)
 - https://freehoon.tistory.com/60 (ERD 관계)
+- https://humblego.tistory.com/18 (DELETE 응답 상태 코드)
 -------------
 
 # 📄 API 명세서
@@ -41,7 +42,7 @@
 |일정 단건 조회|GET|/schedules/{scheduleId}|200 OK|404 Not Found|
 |일정 전체 조회|GET|/schedules|200 OK|404 Not Found|
 |일정 수정|PATCH|/schedules/{scheduleId}|200 OK|400 Bad Request|
-|일정 삭제|DELETE|/schedules/{scheduleId}|200 OK|404 Not Found|
+|일정 삭제|DELETE|/schedules/{scheduleId}|204 No Content|404 Not Found|
 
 |이름|타입|설명|
 |:---|:---|:---|
@@ -205,7 +206,11 @@ Location: /schedules/2
 DELETE /schedules/1 HTTP/1.1
 Host: localhost:8080
 ```
-#### 5-2. Error Response
+#### 5-2. Success Response
+```
+HTTP/1.1 204 No Content
+```
+#### 5-3. Error Response
 ```
 {
  "timestamp": "2024-10-30T17:22:33.123+00:00"
