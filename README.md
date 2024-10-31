@@ -33,6 +33,7 @@
 - https://velog.io/@k904808/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%98-%EC%84%A4%EA%B3%84 (ERD 논리/물리 이름 설정)
 - https://freehoon.tistory.com/60 (ERD 관계)
 - https://humblego.tistory.com/18 (DELETE 응답 상태 코드)
+- https://okky.kr/questions/1394072 (DELETE 응답 상태 코드)
 -------------
 
 # 📄 API 명세서
