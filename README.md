@@ -82,6 +82,15 @@ Location: /schedules/1
  "dtmodify": "2024-10-30"
 }
 ```
+#### 1-3. Error Response
+```
+{
+ "timestamp": "2024-10-30T17:22:33.123+00:00"
+ "status": 400
+ "error": Bad Request
+ "path": /schedules
+}
+```
 
 ### 2. 일정 단건 조회
 #### 2-1. Request
@@ -101,6 +110,15 @@ Content-Type: application/json
  "email": "spring00@gmail.com",
  "dtcreate": "2024-10-30",
  "dtmodify": "2024-10-30"
+}
+```
+#### 2-3. Error Response
+```
+{
+ "timestamp": "2024-10-30T17:22:33.123+00:00"
+ "status": 404
+ "error": Not Found
+ "path": /schedules/1
 }
 ```
 
@@ -136,6 +154,15 @@ Content-Type: application/json
  }
 ]
 ```
+#### 3-3. Error Response
+```
+{
+ "timestamp": "2024-10-30T17:22:33.123+00:00"
+ "status": 404
+ "error": Not Found
+ "path": /schedules
+}
+```
 
 ### 4. 일정 수정
 #### 4-1. Request
@@ -147,7 +174,6 @@ Content-Type: application/json
   "content": "api 명세서 및 ERD 작성하기"
 }
 ```
-
 #### 4-2. Success Response
 ```
 HTTP/1.1 200 OK
@@ -163,12 +189,30 @@ Location: /schedules/2
   "dtmodify": "2024-10-30"
 }
 ```
+#### 4-3. Error Response
+```
+{
+ "timestamp": "2024-10-30T17:22:33.123+00:00"
+ "status": 400
+ "error": Bad Request
+ "path": /schedules/2
+}
+```
 
 ### 5. 일정 삭제
 #### 5-1. Request
 ```
 DELETE /schedules/1 HTTP/1.1
 Host: localhost:8080
+```
+#### 5-2. Error Response
+```
+{
+ "timestamp": "2024-10-30T17:22:33.123+00:00"
+ "status": 404
+ "error": Not Found
+ "path": /schedules/1
+}
 ```
 -----
 
