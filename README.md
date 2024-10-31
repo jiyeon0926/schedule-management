@@ -67,7 +67,7 @@ Content-Type: application/json
  "dtmodify": "2024-10-30"
 }
 ```
-#### 1-2. Response
+#### 1-2. Success Response
 ```
 HTTP/1.1 201 Created
 Content-Type: application/json
@@ -89,7 +89,7 @@ Location: /schedules/1
 GET /schedules/1 HTTP/1.1
 Host: localhost:8080
 ```
-#### 2-2. Response
+#### 2-2. Success Response
 ```
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -110,7 +110,7 @@ Content-Type: application/json
 GET /schedules HTTP/1.1
 Host: localhost:8080
 ```
-#### 3-2. Response
+#### 3-2. Success Response
 ```
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -148,7 +148,7 @@ Content-Type: application/json
 }
 ```
 
-#### 4-2. Response
+#### 4-2. Success Response
 ```
 HTTP/1.1 200 OK
 Content-Type: application/json
