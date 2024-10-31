@@ -35,7 +35,7 @@
 -------------
 
 # 📄 API 명세서
-|기능|Method|URL|HTTP 상태 코드 (성공)||HTTP 상태 코드 (실패)|
+|기능|Method|URL|HTTP 상태 코드 (성공)|HTTP 상태 코드 (실패)|
 |:---|:---:|:---|:---|:---|
 |일정 등록|POST|/schedules|201 Created|400 Bad Request|
 |일정 단건 조회|GET|/schedules/{scheduleId}|200 OK|404 Not Found|
