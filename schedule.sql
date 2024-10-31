@@ -2,7 +2,7 @@
 CREATE TABLE `schedule` (
   `scheduleId` bigint NOT NULL AUTO_INCREMENT,
   `email` varchar(50) NOT NULL,
-  `content` varchar(100) DEFAULT ' ',
+  `content` varchar(200) DEFAULT ' ',
   `name` varchar(20) NOT NULL,
   `password` varchar(100) NOT NULL,
   `dtcreate` date NOT NULL,
