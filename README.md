@@ -45,14 +45,14 @@
 |일정 수정|PATCH|/schedules/{scheduleId}|200 OK|400 Bad Request|
 |일정 삭제|DELETE|/schedules/{scheduleId}|204 No Content|404 Not Found|
 
-|이름|타입|설명|
-|:---|:---|:---|
-|content|string|할일|
-|name|string|작성자명|
-|password|string|비밀번호|
-|email|string|이메일|
-|dtcreate|date|작성일 YYYY-MM-DD|
-|dtmodify|date|수정일 YYYY-MM-DD|
+|이름|타입|설명|필수 여부|
+|:---|:---|:---|:---:|
+|content|string|할일|Y|
+|name|string|작성자명|Y|
+|password|string|비밀번호|Y|
+|email|string|이메일|Y|
+|dtcreate|date|작성일 YYYY-MM-DD|N|
+|dtmodify|date|수정일 YYYY-MM-DD|N|
 
 ### 1. 일정 등록
 #### 1-1. Request
