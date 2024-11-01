@@ -231,4 +231,4 @@ HTTP/1.1 204 No Content
 - email : 작성자 테이블의 기본키, 일정 테이블의 외래키
 - scheduleId : 일정 테이블의 기본키
 
-<img src="https://github.com/user-attachments/assets/5a0bec12-0f6a-4046-9729-56db14235f79" width="700" height="530">
+<img src="https://github.com/user-attachments/assets/9f7d8135-32e0-4bb3-9055-9d551999e27e" width="700" height="530">
