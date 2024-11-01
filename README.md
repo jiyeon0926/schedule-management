@@ -77,6 +77,7 @@ Content-Type: application/json
 Location: /schedules/1
 
 {
+ "scheduleid": 1
  "content": "4 주차 강의까지 듣기",
  "name": "김자바",
  "password": "spring1234",
@@ -107,6 +108,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
+ "scheduleid": 1
  "content": "4 주차 강의까지 듣기",
  "name": "김자바",
  "password": "spring1234",
@@ -184,6 +186,7 @@ Content-Type: application/json
 Location: /schedules/2
 
 {
+  "scheduleid": 2
   "content": "api 명세서 및 ERD 작성하기",
   "name": "김명세",
   "password": "api1234",
