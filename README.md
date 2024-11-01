@@ -47,7 +47,7 @@
 
 |이름|타입|설명|필수 여부|
 |:---|:---|:---|:---:|
-|scheduleid|Long|식별자|N|
+|scheduleid|long|식별자|N|
 |content|string|할일|Y|
 |name|string|작성자명|Y|
 |password|string|비밀번호|Y|
