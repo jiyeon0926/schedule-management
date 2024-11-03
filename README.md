@@ -41,7 +41,7 @@
 |:---|:---:|:---|:---|:---|
 |일정 등록|POST|/schedules|201 Created|400 Bad Request|
 |일정 단건 조회|GET|/schedules/{scheduleId}|200 OK|404 Not Found|
-|일정 전체 조회|GET|/schedules|200 OK|404 Not Found|
+|일정 전체 조회|GET|/schedules|200 OK|빈 배열로 응답하되 상태 코드는 200 OK|
 |일정 수정|PATCH|/schedules/{scheduleId}|200 OK|400 Bad Request|
 |일정 삭제|DELETE|/schedules/{scheduleId}|204 No Content|404 Not Found|
 
