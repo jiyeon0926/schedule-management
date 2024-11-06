@@ -44,8 +44,13 @@ public class ScheduleServiceImpl implements ScheduleService {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "The name and contents and password are required values.");
         }
 
-        int updatedRow = repository.updateSchedule(id, name, contents, password);
         ScheduleResponseDto schedule = repository.findScheduleById(id);
+
+        if (!password.equals(schedule.getPassword())) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "The password is different.");
+        }
+
+        int updatedRow = repository.updateSchedule(id, name, contents, password);
 
         if (updatedRow == 0) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Does not exist id = " + id);
