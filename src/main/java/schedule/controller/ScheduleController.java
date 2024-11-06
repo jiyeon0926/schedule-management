@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import schedule.dto.ScheduleRequestDto;
 import schedule.dto.ScheduleResponseDto;
+import schedule.entity.Schedule;
 import schedule.service.ScheduleService;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class ScheduleController {
     }
 
     @PostMapping
-    public ResponseEntity<ScheduleResponseDto> createSchedule(@RequestBody ScheduleRequestDto requestDto) {
+    public ResponseEntity<Schedule> createSchedule(@RequestBody ScheduleRequestDto requestDto) {
         return new ResponseEntity<>(service.saveSchedule(requestDto), HttpStatus.CREATED);
     }
 

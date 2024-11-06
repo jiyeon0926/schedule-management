@@ -13,8 +13,6 @@ import schedule.entity.Schedule;
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.ZoneId;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,7 +27,7 @@ public class ScheduleRepositoryImpl implements ScheduleRepository {
     }
 
     @Override
-    public ScheduleResponseDto saveSchedule(Schedule schedule) {
+    public Schedule saveSchedule(Schedule schedule) {
         SimpleJdbcInsert simpleJdbcInsert = new SimpleJdbcInsert(jdbcTemplate);
         simpleJdbcInsert.withCatalogName("schedule").withTableName("schedule").usingGeneratedKeyColumns("id");
 
@@ -42,10 +40,9 @@ public class ScheduleRepositoryImpl implements ScheduleRepository {
         parameters.put("dtmodify", schedule.getDtmodify());
 
         Number key = simpleJdbcInsert.executeAndReturnKey(new MapSqlParameterSource(parameters));
+        schedule.setId(key.longValue());
 
-        return new ScheduleResponseDto(key.longValue(), schedule.getName(), schedule.getContents(), schedule.getPassword(),
-                Date.from(schedule.getDtcreate().atZone(ZoneId.systemDefault()).toInstant()),
-                Date.from(schedule.getDtmodify().atZone(ZoneId.systemDefault()).toInstant()));
+        return schedule;
     }
 
     @Override

@@ -21,7 +21,7 @@ public class ScheduleServiceImpl implements ScheduleService {
     }
 
     @Override
-    public ScheduleResponseDto saveSchedule(ScheduleRequestDto requestDto) {
+    public Schedule saveSchedule(ScheduleRequestDto requestDto) {
         Schedule schedule = new Schedule(requestDto.getName(), requestDto.getContents(), requestDto.getPassword());
 
         if (requestDto.getName() == null || requestDto.getContents() == null || requestDto.getPassword() == null) {

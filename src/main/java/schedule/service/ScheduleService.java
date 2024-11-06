@@ -2,12 +2,13 @@ package schedule.service;
 
 import schedule.dto.ScheduleRequestDto;
 import schedule.dto.ScheduleResponseDto;
+import schedule.entity.Schedule;
 
 import java.util.List;
 
 public interface ScheduleService {
 
-    ScheduleResponseDto saveSchedule(ScheduleRequestDto requestDto);
+    Schedule saveSchedule(ScheduleRequestDto requestDto);
 
     List<ScheduleResponseDto> findAllSchedules();
 
