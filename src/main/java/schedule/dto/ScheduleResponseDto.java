@@ -23,6 +23,8 @@ public class ScheduleResponseDto {
         this.name = schedule.getName();
         this.contents = schedule.getContents();
         this.password = schedule.getPassword();
+
+        // 조회할 때, Date 타입으로 보여주기 위해 LocalDateTime 타입으로 저장된 데이터를 변환하여 초기화
         this.dtcreate = Date.from(schedule.getDtcreate().atZone(ZoneId.systemDefault()).toInstant());
         this.dtmodify = Date.from(schedule.getDtmodify().atZone(ZoneId.systemDefault()).toInstant());
     }
