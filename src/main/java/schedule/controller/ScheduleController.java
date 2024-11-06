@@ -30,7 +30,13 @@ public class ScheduleController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<List<ScheduleResponseDto>> findScheduleById(@PathVariable Long id) {
+    public ResponseEntity<ScheduleResponseDto> findScheduleById(@PathVariable Long id) {
         return new ResponseEntity<>(service.findScheduleById(id), HttpStatus.OK);
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<ScheduleResponseDto> updateScheduleById(@PathVariable Long id,
+                                                                  @RequestBody ScheduleRequestDto requestDto) {
+        return new ResponseEntity<>(service.updateSchedule(id, requestDto.getName(), requestDto.getContents(), requestDto.getPassword()), HttpStatus.OK);
     }
 }
