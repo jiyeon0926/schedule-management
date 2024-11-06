@@ -4,7 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import schedule.v1.entity.Schedule;
 
-import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
 
 @Getter
 @AllArgsConstructor
@@ -14,15 +15,15 @@ public class ScheduleResponseDto {
     private String name;
     private String contents;
     private String password;
-    private LocalDateTime dtcreate;
-    private LocalDateTime dtmodify;
+    private Date dtcreate;
+    private Date dtmodify;
 
     public ScheduleResponseDto(Schedule schedule) {
         this.id = schedule.getId();
         this.name = schedule.getName();
         this.contents = schedule.getContents();
         this.password = schedule.getPassword();
-        this.dtcreate = schedule.getDtcreate();
-        this.dtmodify = schedule.getDtmodify();
+        this.dtcreate = Date.from(schedule.getDtcreate().atZone(ZoneId.systemDefault()).toInstant());
+        this.dtmodify = Date.from(schedule.getDtmodify().atZone(ZoneId.systemDefault()).toInstant());
     }
 }
