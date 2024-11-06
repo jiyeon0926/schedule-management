@@ -58,4 +58,19 @@ public class ScheduleServiceImpl implements ScheduleService {
 
         return schedule;
     }
+
+    @Override
+    public void deleteSchedule(Long id, String password) {
+        ScheduleResponseDto schedule = repository.findScheduleById(id);
+
+        if (!password.equals(schedule.getPassword())) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "The password is different.");
+        }
+
+        int deletedRow = repository.deleteSchedule(id, password);
+
+        if (deletedRow == 0) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Does not exist id = " + id);
+        }
+    }
 }
