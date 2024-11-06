@@ -24,6 +24,10 @@ public class ScheduleServiceImpl implements ScheduleService {
     public ScheduleResponseDto saveSchedule(ScheduleRequestDto requestDto) {
         Schedule schedule = new Schedule(requestDto.getName(), requestDto.getContents(), requestDto.getPassword());
 
+        if (requestDto.getName() == null || requestDto.getContents() == null || requestDto.getPassword() == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "The name and contents and password are required values.");
+        }
+
         return repository.saveSchedule(schedule);
     }
 
@@ -40,13 +44,14 @@ public class ScheduleServiceImpl implements ScheduleService {
     @Transactional
     @Override
     public ScheduleResponseDto updateSchedule(Long id, String name, String contents, String password) {
-        if (name.isEmpty() || contents.isEmpty() || password.isEmpty()) {
+        if (name == null || contents == null || password == null) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "The name and contents and password are required values.");
         }
 
+        // 저장된 비밀번호를 가져와서 입력한 비밀번호와 일치한지 비교
         ScheduleResponseDto schedule = repository.findScheduleById(id);
 
-        if (!password.equals(schedule.getPassword())) {
+        if (!schedule.getPassword().equals(password)) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "The password is different.");
         }
 
@@ -56,7 +61,8 @@ public class ScheduleServiceImpl implements ScheduleService {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Does not exist id = " + id);
         }
 
-        return schedule;
+        // 수정 후, 조회한 결과를 응답
+        return repository.findScheduleById(id);
     }
 
     @Override
