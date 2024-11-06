@@ -1,4 +1,4 @@
-package schedule.v1.entity;
+package schedule.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

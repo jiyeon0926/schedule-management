@@ -1,8 +1,8 @@
-package schedule.v1.dto;
+package schedule.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import schedule.v1.entity.Schedule;
+import schedule.entity.Schedule;
 
 import java.time.ZoneId;
 import java.util.Date;

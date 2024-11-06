@@ -1,7 +1,7 @@
-package schedule.v1.repository;
+package schedule.repository;
 
-import schedule.v1.dto.ScheduleResponseDto;
-import schedule.v1.entity.Schedule;
+import schedule.dto.ScheduleResponseDto;
+import schedule.entity.Schedule;
 
 import java.util.List;
 

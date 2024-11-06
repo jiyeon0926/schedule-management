@@ -1,4 +1,4 @@
-package schedule.v1.repository;
+package schedule.repository;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -7,8 +7,8 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.server.ResponseStatusException;
-import schedule.v1.dto.ScheduleResponseDto;
-import schedule.v1.entity.Schedule;
+import schedule.dto.ScheduleResponseDto;
+import schedule.entity.Schedule;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;

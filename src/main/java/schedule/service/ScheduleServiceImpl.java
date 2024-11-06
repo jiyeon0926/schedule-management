@@ -1,10 +1,10 @@
-package schedule.v1.service;
+package schedule.service;
 
 import org.springframework.stereotype.Service;
-import schedule.v1.dto.ScheduleRequestDto;
-import schedule.v1.dto.ScheduleResponseDto;
-import schedule.v1.entity.Schedule;
-import schedule.v1.repository.ScheduleRepository;
+import schedule.dto.ScheduleRequestDto;
+import schedule.dto.ScheduleResponseDto;
+import schedule.entity.Schedule;
+import schedule.repository.ScheduleRepository;
 
 import java.util.List;
 
