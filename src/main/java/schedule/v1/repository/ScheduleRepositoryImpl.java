@@ -1,10 +1,12 @@
 package schedule.v1.repository;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.server.ResponseStatusException;
 import schedule.v1.dto.ScheduleResponseDto;
 import schedule.v1.entity.Schedule;
 
@@ -49,6 +51,17 @@ public class ScheduleRepositoryImpl implements ScheduleRepository {
     @Override
     public List<ScheduleResponseDto> findAllSchedules() {
         return jdbcTemplate.query("select * from schedule order by dtmodify desc", scheduleRowMapper());
+    }
+
+    @Override
+    public List<ScheduleResponseDto> findScheduleById(Long id) {
+        List<ScheduleResponseDto> result = jdbcTemplate.query("select * from schedule where id = ?", scheduleRowMapper(), id);
+
+        if (result.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Does not exist id = " + id);
+        }
+
+        return result;
     }
 
     private RowMapper<ScheduleResponseDto> scheduleRowMapper() {
