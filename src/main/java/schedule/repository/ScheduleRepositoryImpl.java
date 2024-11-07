@@ -56,8 +56,8 @@ public class ScheduleRepositoryImpl implements ScheduleRepository {
     }
 
     @Override
-    public List<ScheduleResponseDto> findAllSchedules() {
-        return jdbcTemplate.query("select * from schedule order by dtmodify desc", scheduleRowMapper());
+    public List<ScheduleResponseDto> findAllSchedules(String email) {
+        return jdbcTemplate.query("select * from schedule where email = ? order by dtmodify desc", scheduleRowMapper(), email);
     }
 
     @Override
