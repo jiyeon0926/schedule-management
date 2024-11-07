@@ -8,7 +8,6 @@ import schedule.dto.ScheduleRequestDto;
 import schedule.dto.ScheduleResponseDto;
 import schedule.entity.Schedule;
 import schedule.repository.ScheduleRepository;
-import schedule.repository.WriterRepository;
 
 import java.util.List;
 

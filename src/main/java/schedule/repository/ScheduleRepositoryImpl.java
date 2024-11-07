@@ -8,7 +8,6 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.server.ResponseStatusException;
 import schedule.dto.ScheduleResponseDto;
-import schedule.dto.WriterResponseDto;
 import schedule.entity.Schedule;
 
 import javax.sql.DataSource;
