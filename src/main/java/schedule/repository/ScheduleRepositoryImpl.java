@@ -36,6 +36,7 @@ public class ScheduleRepositoryImpl implements ScheduleRepository {
         parameters.put("name", schedule.getName());
         parameters.put("contents", schedule.getContents());
         parameters.put("password", schedule.getPassword());
+        parameters.put("email", schedule.getEmail());
         parameters.put("dtcreate", schedule.getDtcreate());
         parameters.put("dtmodify", schedule.getDtmodify());
 
@@ -86,6 +87,7 @@ public class ScheduleRepositoryImpl implements ScheduleRepository {
                         rs.getString("name"),
                         rs.getString("contents"),
                         rs.getString("password"),
+                        rs.getString("email"),
                         rs.getDate("dtcreate"),
                         rs.getDate("dtmodify")
                 );

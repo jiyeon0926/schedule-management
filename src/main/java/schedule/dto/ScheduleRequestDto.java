@@ -8,4 +8,5 @@ public class ScheduleRequestDto {
     private String name;
     private String contents;
     private String password;
+    private String email;
 }

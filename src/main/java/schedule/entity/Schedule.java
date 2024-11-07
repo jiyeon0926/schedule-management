@@ -16,14 +16,16 @@ public class Schedule {
     private String name;
     private String contents;
     private String password;
+    private String email;
     private LocalDateTime dtcreate;
     private LocalDateTime dtmodify;
 
-    public Schedule(String name, String contents, String password) {
+    public Schedule(String name, String contents, String password, String email) {
         this.name = name;
         this.contents = contents;
         this.password = password;
         this.dtcreate = LocalDateTime.now();
         this.dtmodify = LocalDateTime.now();
+        this.email = email;
     }
 }
