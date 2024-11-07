@@ -30,8 +30,8 @@ public class ScheduleRepositoryImpl implements ScheduleRepository {
 
     @Override
     public Schedule saveSchedule(Schedule schedule) {
-        // 일정 생성 요청을 할 때 받은 이메일과 작성자명을 파라미터로 받아서 writer 테이블에 존재하는 이메일인지 확인
-        boolean email = writerRepository.isValidWriter(schedule.getEmail(), schedule.getName());
+        // 일정 생성 요청을 할 때 받은 이메일을 파라미터로 받아서 writer 테이블에 존재하는 이메일인지 확인
+        boolean email = writerRepository.isValidWriter(schedule.getEmail());
 
         if (!email) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Does not exist email.");

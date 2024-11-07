@@ -38,13 +38,12 @@ public class WriterRepositoryImpl implements WriterRepository {
 
     /**
      * @param email 요청 받을 이메일
-     * @param name 요청 받을 작성자명
      * @return 조회한 결과가 있을 경우, true 반환
      */
     @Override
-    public boolean isValidWriter(String email, String name) {
-        String sql = "select count(*) from writer where email = ? and name = ?";
-        Integer count = jdbcTemplate.queryForObject(sql, new Object[]{email, name}, Integer.class);
+    public boolean isValidWriter(String email) {
+        String sql = "select count(*) from writer where email = ?";
+        Integer count = jdbcTemplate.queryForObject(sql, new Object[]{email}, Integer.class);
 
         return count != null && count != 0;
     }
