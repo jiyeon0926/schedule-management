@@ -24,8 +24,8 @@ public class Schedule {
         this.name = name;
         this.contents = contents;
         this.password = password;
+        this.email = email;
         this.dtcreate = LocalDateTime.now();
         this.dtmodify = LocalDateTime.now();
-        this.email = email;
     }
 }

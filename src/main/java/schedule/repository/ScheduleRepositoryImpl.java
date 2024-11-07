@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.server.ResponseStatusException;
 import schedule.dto.ScheduleResponseDto;
+import schedule.dto.WriterResponseDto;
 import schedule.entity.Schedule;
 
 import javax.sql.DataSource;
@@ -21,13 +22,22 @@ import java.util.Map;
 public class ScheduleRepositoryImpl implements ScheduleRepository {
 
     private final JdbcTemplate jdbcTemplate;
+    private final WriterRepository writerRepository;
 
-    public ScheduleRepositoryImpl(DataSource dataSource) {
+    public ScheduleRepositoryImpl(DataSource dataSource, WriterRepository writerRepository) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
+        this.writerRepository = writerRepository;
     }
 
     @Override
     public Schedule saveSchedule(Schedule schedule) {
+        // 일정 생성 요청을 할 때 받은 이메일과 작성자명을 파라미터로 받아서 writer 테이블에 존재하는 이메일인지 확인
+        boolean email = writerRepository.isValidWriter(schedule.getEmail(), schedule.getName());
+
+        if (!email) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Does not exist email.");
+        }
+
         SimpleJdbcInsert simpleJdbcInsert = new SimpleJdbcInsert(jdbcTemplate);
         simpleJdbcInsert.withCatalogName("schedule").withTableName("schedule").usingGeneratedKeyColumns("id");
 

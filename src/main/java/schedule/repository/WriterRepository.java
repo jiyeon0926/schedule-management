@@ -6,4 +6,6 @@ import schedule.entity.Writer;
 public interface WriterRepository {
 
     WriterResponseDto saveWriter(Writer writer);
+
+    boolean isValidWriter(String email, String name);
 }
