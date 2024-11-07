@@ -26,7 +26,7 @@ public class WriterServiceImpl implements WriterService {
         }
 
         if (writer.getEmail().equals(requestDto.getEmail())) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "The email and name are required values.");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "The email already exists.");
         }
 
         return repository.saveWriter(writer);
