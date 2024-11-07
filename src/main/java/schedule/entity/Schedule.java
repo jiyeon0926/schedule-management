@@ -18,16 +18,12 @@ public class Schedule {
     private String password;
     private LocalDateTime dtcreate;
     private LocalDateTime dtmodify;
-    private String email; // 외래키
-    private Writer writer;
 
-    public Schedule(String name, String contents, String password, Writer writer) {
+    public Schedule(String name, String contents, String password) {
         this.name = name;
         this.contents = contents;
         this.password = password;
         this.dtcreate = LocalDateTime.now();
         this.dtmodify = LocalDateTime.now();
-        this.email = writer.getEmail();
-        this.writer = writer;
     }
 }
