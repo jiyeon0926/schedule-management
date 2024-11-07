@@ -18,6 +18,10 @@ public class Schedule {
     private String password;
     private LocalDateTime dtcreate;
     private LocalDateTime dtmodify;
+    private String email; // 외래키
+
+    @Setter
+    private Writer writer;
 
     public Schedule(String name, String contents, String password) {
         this.name = name;
