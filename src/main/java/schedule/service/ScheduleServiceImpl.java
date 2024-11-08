@@ -24,7 +24,7 @@ public class ScheduleServiceImpl implements ScheduleService {
     public Schedule saveSchedule(ScheduleRequestDto requestDto) {
         Schedule schedule = new Schedule(requestDto.getName(), requestDto.getContents(), requestDto.getPassword(), requestDto.getEmail());
 
-        if (requestDto.getName() == null || requestDto.getContents() == null || requestDto.getPassword() == null) {
+        if (requestDto.getName() == null || requestDto.getContents() == null || requestDto.getPassword() == null || requestDto.getContents().length() > 200) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "The name and contents and password are required values.");
         }
 
@@ -44,7 +44,7 @@ public class ScheduleServiceImpl implements ScheduleService {
     @Transactional
     @Override
     public ScheduleResponseDto updateSchedule(Long id, String name, String contents, String password) {
-        if (name == null || contents == null || password == null) {
+        if (name == null || contents == null || password == null || contents.length() > 200) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "The name and contents and password are required values.");
         }
 
