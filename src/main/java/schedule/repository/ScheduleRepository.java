@@ -9,7 +9,7 @@ public interface ScheduleRepository {
 
     Schedule saveSchedule(Schedule schedule);
 
-    List<ScheduleResponseDto> findAllSchedules(String email);
+    List<ScheduleResponseDto> findAllSchedules();
 
     ScheduleResponseDto findScheduleById(Long id);
 
